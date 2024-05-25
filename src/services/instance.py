@@ -1,6 +1,7 @@
 class Instance:
-    def __init__(self, endpoint: str):
+    def __init__(self, endpoint: str, instance: dict):
         self.endpoint = endpoint
+        self.instance = instance
 
     def get_load(self) -> int:
         '''
