@@ -1,0 +1,21 @@
+services:
+  collector:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      AWS_ACCESS_KEY_ID: fakeMyKeyId
+      AWS_SECRET_ACCESS_KEY: fakeSecretAccessKey
+      REGION_NAME: us-west-2
+      IMAGE_ID: ami-0c55b159cbfafe1f0
+      SECURITY_GROUP_IDS: sg-0e8e4e5e4e8e4e8e4
+      KEY_NAME: my-key-pair
+      SUBNET_ID: subnet-0e8e4e5e4e8e4e8e4
+      DEBUG: 0
+      PORT: 5000
+    networks:
+      - collector-network
+
+networks:
+  collector-network:
+
